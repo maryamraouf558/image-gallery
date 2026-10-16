@@ -1,0 +1,306 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333333;
+    padding: 25px 20px;
+}
+
+/* =========================
+        CONTAINER
+========================= */
+
+.gallery-container {
+    width: 100%;
+    max-width: 750px;
+    margin: 0 auto;
+}
+
+
+/* =========================
+        HEADER
+========================= */
+
+.gallery-header {
+    height: 60px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 20px;
+}
+
+
+/* =========================
+        LOGO
+========================= */
+
+.gallery-header .logo {
+    font-family: cursive;
+    font-size: 24px;
+    font-style: italic;
+    color: #333;
+}
+
+.gallery-header .logo span {
+    display: block;
+
+    font-family: Arial, sans-serif;
+    font-size: 6px;
+    font-style: normal;
+
+    letter-spacing: 2px;
+    text-align: right;
+
+    color: #777;
+    margin-top: -4px;
+}
+
+
+/* =========================
+        NAVIGATION
+========================= */
+
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #333;
+
+    font-size: 11px;
+    letter-spacing: 0.3px;
+}
+
+.nav-menu a:hover {
+    color: #999;
+}
+
+
+/* =========================
+        PHOTO GRID
+========================= */
+
+.photo-grid {
+    display: grid;
+
+    grid-template-columns: repeat(5, 1fr);
+
+    grid-auto-rows: 90px;
+
+    gap: 5px;
+}
+
+
+/* =========================
+        IMAGES
+========================= */
+
+.grid-item {
+    width: 100%;
+    overflow: hidden;
+}
+
+.grid-item img {
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition: transform 0.4s ease;
+}
+
+.grid-item:hover img {
+    transform: scale(1.03);
+}
+
+
+/* =========================
+        COLUMN 1
+========================= */
+
+.grid-item:nth-child(1) {
+    grid-column: 1;
+    grid-row: 1 / span 2;
+}
+
+.grid-item:nth-child(2) {
+    grid-column: 1;
+    grid-row: 3 / span 2;
+}
+
+.grid-item:nth-child(3) {
+    grid-column: 1;
+    grid-row: 5;
+}
+
+
+/* =========================
+        COLUMN 2
+========================= */
+
+.grid-item:nth-child(4) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.grid-item:nth-child(5) {
+    grid-column: 2;
+    grid-row: 2 / span 2;
+}
+
+.grid-item:nth-child(6) {
+    grid-column: 2;
+    grid-row: 4 / span 2;
+}
+
+
+/* =========================
+        COLUMN 3
+========================= */
+
+.grid-item:nth-child(7) {
+    grid-column: 3;
+    grid-row: 1 / span 2;
+}
+
+.grid-item:nth-child(8) {
+    grid-column: 3;
+    grid-row: 3 / span 2;
+}
+
+.grid-item:nth-child(9) {
+    grid-column: 3;
+    grid-row: 5;
+}
+
+
+/* =========================
+        COLUMN 4
+========================= */
+
+.grid-item:nth-child(10) {
+    grid-column: 4;
+    grid-row: 1;
+}
+
+.grid-item:nth-child(11) {
+    grid-column: 4;
+    grid-row: 2 / span 2;
+}
+
+.grid-item:nth-child(12) {
+    grid-column: 4;
+    grid-row: 4 / span 2;
+}
+
+
+/* =========================
+        COLUMN 5
+========================= */
+
+.grid-item:nth-child(13) {
+    grid-column: 5;
+    grid-row: 1 / span 2;
+}
+
+.grid-item:nth-child(14) {
+    grid-column: 5;
+    grid-row: 3 / span 2;
+}
+
+.grid-item:nth-child(15) {
+    grid-column: 5;
+    grid-row: 5;
+}
+
+
+/* =========================
+        TABLET
+========================= */
+
+@media (max-width: 800px) {
+
+    .gallery-container {
+        max-width: 95%;
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .grid-item {
+        grid-column: auto !important;
+        grid-row: auto !important;
+        height: 180px;
+    }
+
+}
+
+
+/* =========================
+        MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 20px 10px;
+    }
+
+    .gallery-header {
+        height: auto;
+
+        flex-direction: column;
+
+        gap: 15px;
+
+        margin-bottom: 20px;
+    }
+
+    .nav-menu {
+        gap: 18px;
+
+        flex-wrap: wrap;
+
+        justify-content: center;
+    }
+
+    .photo-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+    }
+
+    .grid-item {
+        height: 180px;
+    }
+
+}
+
+
+/* =========================
+        SMALL MOBILE
+========================= */
+
+@media (max-width: 400px) {
+
+    .photo-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .grid-item {
+        height: 250px;
+    }
+
+}
